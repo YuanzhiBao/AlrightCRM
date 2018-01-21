@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for app_name, models in sites.items %}
+    <div> {{ app_name }}</div>
+    {% for model in models %}
+        <div>
+            <a href="{% url 'table_list' app_name model%}">{{ model }}</a>
+        </div>
+    {% endfor %}
+{% endfor %}
+</body>
+</html>
